@@ -5,7 +5,7 @@ import './Banner.css'
 
 const Banner = () => {
     return (
-        <div
+        <div 
           style={{
             background: `url(${bg})`,
             backgroundSize: '100%',

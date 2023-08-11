@@ -6,11 +6,13 @@ import './AboutStudio.css'
 const AboutStudio = () => {
     return (
         <div className='my-20 lg:m-20'>
-            <h1 className='text-4xl font-bold flex items-center justify-center mb-20'>ABOUT STUDIO <span className='ml-2'><img src={headImg} alt="" /></span></h1>
+            <h1 className='text-3xl lg:text-4xl font-bold flex items-center justify-center mb-20'>ABOUT STUDIO <span className='ml-2'><img src={headImg} alt="" /></span></h1>
 
-            <div style={{
+            <div className='bg-auto'
+            style={{
                 background: `url(${abuoutImg})`,
                 backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center',
                 backgroundPositionX: 'center',
                 backgroundPositionY: 'bottom',
             }}

@@ -7,6 +7,7 @@ import bg from '../../assest/hero-bg.png';
 const Navbar = () => {
     const menuItems = <>
        <li className='text-xl text-cyan-500'><Link to='/'>Home</Link></li>
+       <li className='text-xl text-cyan-500'><Link to='/login'>Login</Link></li>
        
     </>
     return (

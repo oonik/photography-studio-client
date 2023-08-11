@@ -7,7 +7,7 @@ import a3 from '../../../assest/a-3.png';
 const Achievements = () => {
     return (
         <section  className='m-10'>
-            <h1 className='text-4xl font-bold flex items-center justify-center mb-3'>ACHIEVEMENTS <span className='ml-3'><img src={heading} alt="" /></span></h1>
+            <h1 className='text-3xl lg:text-4xl font-bold flex items-center justify-center mb-3'>ACHIEVEMENTS <span className='ml-3'><img src={heading} alt="" /></span></h1>
             <p className='text-center text-xl mb-16'>minim veniam, quis nostrud exercitation ullamco laboris nisi</p>
            <div className='grid lg:grid-cols-3 items-center gap-10 lg:mx-20'>
            <div className='border-2 border-cyan-400 flex flex-col items-center pt-10 pb-5'>

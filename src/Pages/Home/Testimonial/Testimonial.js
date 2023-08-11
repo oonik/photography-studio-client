@@ -1,7 +1,8 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, A11y, Autoplay } from 'swiper/modules';
-import heading from '../../../assest/heading-img.png'
+import heading from '../../../assest/heading-img.png';
+import quote from '../../../assest/quote.svg';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -31,7 +32,7 @@ const Testimonial = () => {
     ]
     return (
         <section className='mx-10 mt-20'>
-            <h1 className='text-4xl font-bold flex items-center justify-center mb-3'>TESTIMONIAL <span className='ml-3'><img src={heading} alt="" /></span></h1>
+            <h1 className='text-3xl lg:text-4xl font-bold flex items-center justify-center mb-3'>TESTIMONIAL <span className='ml-3'><img src={heading} alt="" /></span></h1>
             <p className='text-center text-xl mb-16'>minim veniam, quis nostrud exercitation ullamco laboris nisi</p>
             <Swiper
             spaceBetween={50}
@@ -63,6 +64,7 @@ const Testimonial = () => {
                 testimonials.map((testimonial, i) => <SwiperSlide key={i}>
                     <div className="card border-2">
                         <div className="card-body items-center text-center">
+                            <img src={quote} alt="" className='w-16' />
                             <h2 className="card-title">{testimonial.name}</h2>
                             <p>{testimonial.message}</p>
                         </div>
