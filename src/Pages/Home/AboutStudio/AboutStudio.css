@@ -16,3 +16,10 @@
         transform:rotate(360deg); 
     } 
 }
+.bg-image{
+    background: url('../../../assest/about-img.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    /* background-size: 40vh; */
+    background-size: 20vw;
+};
