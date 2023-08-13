@@ -1,15 +1,35 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
 import heading from '../../../assest/heading-img.png';
 import contactBg from '../../../assest/contact-bg.png'
 import camera1 from '../../../assest/bg-img-1.png'
 import camera2 from '../../../assest/bg-img-2.png'
+import { toast } from 'react-toastify';
+import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const ContactUs = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const {user} = useContext(AuthContext);
 
     const handleContact = data => {
-         console.log(data)
+         fetch('http://localhost:5000/booking',{
+            method: 'POST',
+            headers: {
+                'content-type':'application/json'
+            },
+            body: JSON.stringify(data)
+         })
+         .then(res => res.json())
+         .then(data => {
+            if(data.acknowledged){
+                reset();
+                toast.success('Booking successfully', {
+                    position: 'top-center',
+                    closeOnClick: true,
+                    autoClose: 2000
+                });
+            }
+         })
     }
     return (
         <section className='mt-20 relative' 
@@ -27,7 +47,7 @@ const ContactUs = () => {
                 <input type="text" placeholder='Name' {...register("name", { required: 'Name is required' })} className='border-b-2 p-2 bg-transparent border-slate-400 focus:outline-none w-full' />
                 {errors?.name && <span className='text-red-500'>{errors.name?.message}</span>}
 
-                <input type="email" placeholder='Email' {...register("email", { required: 'Email is required' })} className='border-b-2 p-2 mt-6 bg-transparent border-slate-400 focus:outline-none w-full' />
+                <input type="email" placeholder='Email' defaultValue={user?.email} {...register("email", { required: 'Email is required' })} className='border-b-2 p-2 mt-6 bg-transparent border-slate-400 focus:outline-none w-full' />
                 {errors?.email && <span className='text-red-500'>{errors.email?.message}</span>}
 
                 <input type="number" placeholder='Number' {...register("number", { required: 'Number is required' })} className='border-b-2 p-2 mt-6 bg-transparent border-slate-400 focus:outline-none w-full' />
